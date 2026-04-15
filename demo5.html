@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SmartLearn Pro</title>
+
+<style> 
+button{
+    padding:10px;
+    margin:6px;
+    border:none;
+    border-radius:10px;
+    background-color:#c0139d;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color:#FECBA4;
+}
+ 
+body{
+    font-family:Comic Sans MS;
+    text-align:center;
+    background:linear-gradient(#a1e3ff,#e6f7ff);
+}
+
+button{
+    padding:12px;
+    margin:8px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.math{
+    background:orange;
+    padding:18px 80px;
+    font-size:40px;
+    font-family:'Gill Sans', Calibri;
+}
+
+.english{
+    background:green;
+    padding:18px 80px;
+    font-size:30px;
+    font-family:'Gill Sans', Calibri;
+}
+
+.evs{
+    background:teal;
+    padding:18px 80px;
+    font-size:40px;  /* fixed */
+    font-family:Arial;
+}
+
+.hidden{display:none;}
+
+.card{
+    background:white;
+    margin:15px;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+} 
+
+img{border-radius:10px;}
+
+h1{background-color:aquamarine;}
+h2{background-color:#39FF14;font-family:Algerian;}
+</style>
+
+<script>
+// FIXED SECTION SHOW
+function showSection(id){
+    document.getElementById('menu').style.display="none";
+
+    document.getElementById('math').style.display="none";
+    document.getElementById('english').style.display="none";
+    document.getElementById('evs').style.display="none";
+
+    document.getElementById(id).style.display="block";
+}
+
+// BACK BUTTON
+function back(){
+    location.reload();
+}
+
+// BUTTON CHECK
+function check(ans,correct){
+    alert(ans==correct?"Correct 🎉":"Try Again ❌");
+}
+
+// INPUT CHECK (added)
+function checkInput(id,correct){
+    let value=document.getElementById(id).value;
+    if(value==correct){
+        alert("Correct 🎉");
+    } else {
+        alert("Try Again ❌");
+    }
+}
+
+// EVS INFO (added)
+function showInfo(id){
+    let el=document.getElementById(id);
+    if(el.style.display=="none"){
+        el.style.display="block";
+    } else {
+        el.style.display="none";
+    }
+}
+
+function checkAnswer(user, correct, id){
+   let result = document.getElementById(id);
+
+   if(user === correct){
+      result.innerHTML = "Correct ✅";
+   } else {
+      result.innerHTML = "Wrong ❌";
+   }
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="menu">
+<h1>🌈 SmartLearn</h1>
+
+<img src="kid.jpeg" height="300" width="350"><br>
+
+<marquee>
+<h2>Choose Subject</h2>
+</marquee>
+
+<button class="math" onclick="showSection('math')">📘 Math</button><br> 
+<button class="english" onclick="showSection('english')">📗 English</button><br> 
+<button class="evs" onclick="showSection('evs')">🌍 EVS</button>
+</div>
+
+<!-- ENGLISH -->
+<div id="english" class="hidden">
+<h2>📚 English Fun Zone</h2>
+
+<script>
+function speak(text){
+    let msg = new SpeechSynthesisUtterance(text);
+    msg.rate = 0.9;
+    window.speechSynthesis.speak(msg);
+}
+</script>
+
+<div class="card" onclick="speak('Little star up in the sky, Shining bright and twinkling high, Guide me gently through the night, With your soft and glowing light')">
+<h3>🌟 Little Star Friend</h3>
+<p>Little star up in the sky,<br>
+Shining bright and twinkling high,<br>
+Guide me gently through the night,<br>
+With your soft and glowing light.</p>
+</div>
+
+<div class="card" onclick="speak('Rainbow colors in the sky, Red and blue and shining high, After rain you come to play, Then you slowly fade away')">
+<h3>🌈 Rainbow Song</h3>
+<p>Rainbow colors in the sky,<br>
+Red and blue and shining high,<br>
+After rain you come to play,<br>
+Then you slowly fade away.</p>
+</div>
+
+<div class="card" onclick="speak('Little bird up in the tree, Singing songs so happily, Fly around and chirp all day, Then at night you rest away')">
+<h3>🐦 Little Bird</h3>
+<p>Little bird up in the tree,<br>
+Singing songs so happily,<br>
+Fly around and chirp all day,<br>
+Then at night you rest away.</p>
+</div>
+
+<div class="card" onclick="speak('Round moon shining in the night, Glowing with your gentle light, Watch the world as we all sleep, Silent guard your promise keep')">
+<h3>🌙 Moon So Bright</h3>
+<p>Round moon shining in the night,<br>
+Glowing with your gentle light,<br>
+Watch the world as we all sleep,<br>
+Silent guard your promise keep.</p>
+</div>
+
+<div class="card" onclick="speak('Little flower in the sun, Dancing gently having fun, Swaying softly in the breeze, Growing strong with gentle ease')">
+<h3 style="background-color:aqua;">🌼 Happy Flower</h3>
+<p>Little flower in the sun,<br>
+Dancing gently, having fun,<br>
+Swaying softly in the breeze,<br>
+Growing strong with gentle ease.</p>
+</div>
+
+<h2>🎥 Videos</h2>
+
+
+
+
+<br><hr>
+
+<!-- FIXED -->
+<iframe width="400" height="300"
+src="https://www.youtube.com/embed/AIIj0mBX1jU"
+allowfullscreen></iframe>
+
+<br><hr>
+
+<iframe width="400" height="300"
+src="https://www.youtube.com/embed/nrv495corBc"
+allowfullscreen></iframe>
+
+<br><hr>
+
+<h3>🔤 ABCD Chart</h3>
+<img src="chartabcd.jpeg" height="300" width="400">
+
+<h3>📊 English Charts</h3>
+<p><b>Noun:</b> Name of person, place, thing</p>
+<p><i>Example:</i> Boy, School, Apple</p>
+
+<button onclick="back()">⬅ Back</button>
+</div>
+
+<!-- MATH -->
+<div id="math" class="hidden">
+
+<h2>🍎 Math Practice</h2>
+<iframe src="calculator2.html" width="300" height="400"></iframe><hr><hr>
+<img src="add1.jpeg" height="300" width="300" alt="My Image">
+<hr><hr>
+<img src="add2.jpeg" height="300" width="300" alt="My Image">
+<hr><hr>
+<p>2 + 3 = ?</p>
+<input type="number" id="a1">
+<button onclick="checkInput('a1',5)">Check</button>
+
+<p>4 + 1 = ?</p>
+<input type="number" id="a2">
+<button onclick="checkInput('a2',5)">Check</button>
+
+<p>6 + 2 = ?</p>
+<input type="number" id="a3">
+<button onclick="checkInput('a3',8)">Check</button>
+
+<p>3 + 3 = ?</p>
+<input type="number" id="a4">
+<button onclick="checkInput('a4',6)">Check</button>
+
+<p>1 + 7 = ?</p>
+<input type="number" id="a5">
+<button onclick="checkInput('a5',8)">Check</button>
+
+<p>5 + 5 = ?</p>
+<input type="number" id="a6">
+<button onclick="checkInput('a6',10)">Check</button>
+
+<p>9 + 1 = ?</p>
+<input type="number" id="a7">
+<button onclick="checkInput('a7',10)">Check</button>
+
+<p>2 + 6 = ?</p>
+<input type="number" id="a8">
+<button onclick="checkInput('a8',8)">Check</button>
+
+<p>7 + 2 = ?</p>
+<input type="number" id="a9">
+<button onclick="checkInput('a9',9)">Check</button>
+
+<p>8 + 1 = ?</p>
+<input type="number" id="a10">
+<button onclick="checkInput('a10',9)">Check</button>
+<hr><hr>
+
+
+<h2>Subtraction</h2>
+
+<p>5 - 2 = ?</p>
+<input type="number" id="s1">
+<button onclick="checkInput('s1',3)">Check</button>
+
+<p>9 - 4 = ?</p>
+<input type="number" id="s2">
+<button onclick="checkInput('s2',5)">Check</button>
+
+<p>8 - 3 = ?</p>
+<input type="number" id="s3">
+<button onclick="checkInput('s3',5)">Check</button>
+
+<p>7 - 1 = ?</p>
+<input type="number" id="s4">
+<button onclick="checkInput('s4',6)">Check</button>
+
+<p>6 - 2 = ?</p>
+<input type="number" id="s5">
+<button onclick="checkInput('s5',4)">Check</button>
+
+<p>10 - 5 = ?</p>
+<input type="number" id="s6">
+<button onclick="checkInput('s6',5)">Check</button>
+
+<p>9 - 2 = ?</p>
+<input type="number" id="s7">
+<button onclick="checkInput('s7',7)">Check</button>
+
+<p>8 - 4 = ?</p>
+<input type="number" id="s8">
+<button onclick="checkInput('s8',4)">Check</button>
+
+<p>7 - 3 = ?</p>
+<input type="number" id="s9">
+<button onclick="checkInput('s9',4)">Check</button>
+
+<p>6 - 1 = ?</p>
+<input type="number" id="s10">
+<button onclick="checkInput('s10',5)">Check</button>
+
+
+<h2>Multiplication</h2>
+
+<p>2 × 3 = ?</p>
+<input type="number" id="m1">
+<button onclick="checkInput('m1',6)">Check</button>
+
+<p>4 × 2 = ?</p>
+<input type="number" id="m2">
+<button onclick="checkInput('m2',8)">Check</button>
+
+<p>5 × 2 = ?</p>
+<input type="number" id="m3">
+<button onclick="checkInput('m3',10)">Check</button>
+
+<p>3 × 3 = ?</p>
+<input type="number" id="m4">
+<button onclick="checkInput('m4',9)">Check</button>
+
+<p>6 × 1 = ?</p>
+<input type="number" id="m5">
+<button onclick="checkInput('m5',6)">Check</button>
+
+<p>7 × 2 = ?</p>
+<input type="number" id="m6">
+<button onclick="checkInput('m6',14)">Check</button>
+
+<p>8 × 1 = ?</p>
+<input type="number" id="m7">
+<button onclick="checkInput('m7',8)">Check</button>
+
+<p>9 × 1 = ?</p>
+<input type="number" id="m8">
+<button onclick="checkInput('m8',9)">Check</button>
+
+<p>2 × 5 = ?</p>
+<input type="number" id="m9">
+<button onclick="checkInput('m9',10)">Check</button>
+
+<p>3 × 4 = ?</p>
+<input type="number" id="m10">
+<button onclick="checkInput('m10',12)">Check</button>
+
+
+<h2>Division</h2>
+
+<p>6 ÷ 2 = ?</p>
+<input type="number" id="d1">
+<button onclick="checkInput('d1',3)">Check</button>
+
+<p>8 ÷ 2 = ?</p>
+<input type="number" id="d2">
+<button onclick="checkInput('d2',4)">Check</button>
+
+<p>10 ÷ 5 = ?</p>
+<input type="number" id="d3">
+<button onclick="checkInput('d3',2)">Check</button>
+
+<p>9 ÷ 3 = ?</p>
+<input type="number" id="d4">
+<button onclick="checkInput('d4',3)">Check</button>
+
+<p>12 ÷ 2 = ?</p>
+<input type="number" id="d5">
+<button onclick="checkInput('d5',6)">Check</button>
+
+<p>15 ÷ 3 = ?</p>
+<input type="number" id="d6">
+<button onclick="checkInput('d6',5)">Check</button>
+
+<p>16 ÷ 4 = ?</p>
+<input type="number" id="d7">
+<button onclick="checkInput('d7',4)">Check</button>
+
+<p>18 ÷ 2 = ?</p>
+<input type="number" id="d8">
+<button onclick="checkInput('d8',9)">Check</button>
+
+<p>20 ÷ 5 = ?</p>
+<input type="number" id="d9">
+<button onclick="checkInput('d9',4)">Check</button>
+
+<p>14 ÷ 2 = ?</p>
+<input type="number" id="d10">
+<button onclick="checkInput('d10',7)">Check</button><br>
+
+<button onclick="back()">⬅ Back</button>
+</div>
+
+<!-- EVS -->
+<div id="evs" class="hidden">
+
+<h2>🌍 EVS Fun Learning</h2>
+
+<p>1. Which is a source of water?
+<button onclick="checkAnswer('a','a','r1')">River</button>
+<button onclick="checkAnswer('b','a','r1')">Car</button>
+<button onclick="checkAnswer('c','a','r1')">Chair</button>
+<button onclick="checkAnswer('d','a','r1')">Table</button>
+<span id="r1"></span>
+</p>
+
+<p>2. Which animal lives in water?
+<button onclick="checkAnswer('a','b','r2')">Dog</button>
+<button onclick="checkAnswer('b','b','r2')">Fish</button>
+<button onclick="checkAnswer('c','b','r2')">Cat</button>
+<button onclick="checkAnswer('d','b','r2')">Cow</button>
+<span id="r2"></span>
+</p>
+
+<p>3. Which is a green vegetable?
+<button onclick="checkAnswer('a','c','r3')">Potato</button>
+<button onclick="checkAnswer('b','c','r3')">Carrot</button>
+<button onclick="checkAnswer('c','c','r3')">Spinach</button>
+<button onclick="checkAnswer('d','c','r3')">Onion</button>
+<span id="r3"></span>
+</p>
+
+<p>4. What do plants need to grow?
+<button onclick="checkAnswer('a','d','r4')">Plastic</button>
+<button onclick="checkAnswer('b','d','r4')">Stone</button>
+<button onclick="checkAnswer('c','d','r4')">Paper</button>
+<button onclick="checkAnswer('d','d','r4')">Water & Sunlight</button>
+<span id="r4"></span>
+</p>
+
+<p>5. Which is a wild animal?
+<button onclick="checkAnswer('a','a','r5')">Lion</button>
+<button onclick="checkAnswer('b','a','r5')">Dog</button>
+<button onclick="checkAnswer('c','a','r5')">Cow</button>
+<button onclick="checkAnswer('d','a','r5')">Goat</button>
+<span id="r5"></span>
+</p>
+
+<p>6. Which is a domestic animal?
+<button onclick="checkAnswer('a','b','r6')">Tiger</button>
+<button onclick="checkAnswer('b','b','r6')">Cow</button>
+<button onclick="checkAnswer('c','b','r6')">Lion</button>
+<button onclick="checkAnswer('d','b','r6')">Elephant</button>
+<span id="r6"></span>
+</p>
+
+<p>7. Which is a source of light?
+<button onclick="checkAnswer('a','a','r7')">Sun</button>
+<button onclick="checkAnswer('b','a','r7')">Chair</button>
+<button onclick="checkAnswer('c','a','r7')">Table</button>
+<button onclick="checkAnswer('d','a','r7')">Bag</button>
+<span id="r7"></span>
+</p>
+
+<p>8. Which part of plant is green?
+<button onclick="checkAnswer('a','c','r8')">Root</button>
+<button onclick="checkAnswer('b','c','r8')">Flower</button>
+<button onclick="checkAnswer('c','c','r8')">Leaf</button>
+<button onclick="checkAnswer('d','c','r8')">Fruit</button>
+<span id="r8"></span>
+</p>
+
+<p>9. Which is used for drinking?
+<button onclick="checkAnswer('a','d','r9')">Oil</button>
+<button onclick="checkAnswer('b','d','r9')">Petrol</button>
+<button onclick="checkAnswer('c','d','r9')">Ink</button>
+<button onclick="checkAnswer('d','d','r9')">Water</button>
+<span id="r9"></span>
+</p>
+
+<p>10. Which is a bird?
+<button onclick="checkAnswer('a','b','r10')">Dog</button>
+<button onclick="checkAnswer('b','b','r10')">Parrot</button>
+<button onclick="checkAnswer('c','b','r10')">Cat</button>
+<button onclick="checkAnswer('d','b','r10')">Fish</button>
+<span id="r10"></span>
+</p>
+
+<p>11. Do plants need sunlight?
+<button onclick="checkAnswer('yes','yes','r11')">Yes</button>
+<button onclick="checkAnswer('no','yes','r11')">No</button>
+<span id="r11"></span>
+</p>
+
+<p>12. Do fish live on land?
+<button onclick="checkAnswer('yes','no','r12')">Yes</button>
+<button onclick="checkAnswer('no','no','r12')">No</button>
+<span id="r12"></span>
+</p>
+
+<p>13. Is air important for living things?
+<button onclick="checkAnswer('yes','yes','r13')">Yes</button>
+<button onclick="checkAnswer('no','yes','r13')">No</button>
+<span id="r13"></span>
+</p>
+
+<p>14. Do we get milk from plants?
+<button onclick="checkAnswer('yes','no','r14')">Yes</button>
+<button onclick="checkAnswer('no','no','r14')">No</button>
+<span id="r14"></span>
+</p>
+
+<p>15. Is the sun hot?
+<button onclick="checkAnswer('yes','yes','r15')">Yes</button>
+<button onclick="checkAnswer('no','yes','r15')">No</button>
+<span id="r15"></span>
+</p>
+
+
+<br><br>
+
+<button onclick="back()">⬅ Back</button>
+</div>
+
+</body>
+</html>
